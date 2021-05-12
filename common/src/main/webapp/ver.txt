@@ -1,0 +1,6 @@
+mvn.buildTime=2018-09-18 15:21:43
+mvn.scmBranch=master
+mvn.commit.revision=ac81db6c
+mvn.project.build.finalName=common-1.1.5-SNAPSHOT
+mvn.project.version=1.1.5-SNAPSHOT
+mvn.buildComputerName=VILIK

@@ -1,0 +1,27 @@
+<nav class="pages">
+    <a translate="HOME" href="#/"></a>
+    <a class="select">{{release_version}} </a>
+</nav>
+<section style="position: relative">
+    <article>
+        <div style="position: relative">
+
+            <div style="text-align: center; padding-top: 40px; padding-bottom: 30px; font-size:30px; letter-spacing: 2px; ">
+                <a class="release_version" href="javascript:void(0)" role="link" class="img"
+                   data-ng-click="login('versionSection')"
+                   data-ng-mouseenter="miniTitleIn('versionSection')"
+                   data-ng-mouseleave="miniTitleOut('versionSection')">{{release_version}} <img
+                        style="vertical-align: middle" src="../../css/images/Down_arrow.svg"></a>
+
+            </div>
+
+            <div id="versionSection" class=mini_version_list>
+                <label class="option" ng-click="getVersion('0')">VERSION 1.1.5</label>
+                <label class="option" ng-click="getVersion('1')">VERSION 1.1.4</label>
+                <label class="option" ng-click="getVersion('2')">VERSION 1.1.3</label>
+                <label class="option" ng-click="getVersion('3')">VERSION 1.1.2</label>
+            </div>
+        </div>
+    </article>
+    <div version-content></div>
+</section>
