@@ -24,8 +24,4 @@
     "jquery.soap": "^1.6.7",
     "load-grunt-tasks": "~0.1.0"
   }
-    "scripts": {
-    "bower:install": "bower install",
-    "grunt:build": "grunt build"
-  }
 }
