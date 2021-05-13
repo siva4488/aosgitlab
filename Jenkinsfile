@@ -66,7 +66,7 @@ pipeline
 		// Set HCMX_SUB_CANCEL_DELAY_SECONDS variable to at-least 180 seconds if you are using it in a POC or demo 
 		// environment so that deployed ad-hoc test environment VMs are still available to show to the audience.
 		
-		HCMX_SUB_CANCEL_DELAY_SECONDS = "0"
+		HCMX_SUB_CANCEL_DELAY_SECONDS = "180"
 		
 		// Enter time in seconds to wait for HCMX and its target cloud provider to provision the ad-hoc test environment.  
 		// If HCMX and its target cloud provider takes longer than the timeout specified in HCMX_REQ_DEPLOY_TIMEOUT_SECONDS
