@@ -143,10 +143,10 @@ pipeline
 				*****/
 				
 				echo '***************************************** BUILDING *****************************************'
-				sh 'mkdir build'
-				sh 'cp HelloWorld.sh build/HelloWorld.sh'
-				sh 'chmod 555 build/HelloWorld.sh'
-				sh "echo version = 1.0.${env.BUILD_ID} >> build/version.txt"	
+				//sh 'mkdir build'
+				//sh 'cp HelloWorld.sh build/HelloWorld.sh'
+				//sh 'chmod 555 build/HelloWorld.sh'
+				//sh "echo version = 1.0.${env.BUILD_ID} >> build/version.txt"	
                                 //sh "mvn package -P production,pack_all_wars -DskipTests=true"				
             }
         }
