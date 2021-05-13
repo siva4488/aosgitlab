@@ -643,8 +643,9 @@ pipeline
 														//Copy build to the deployed virtual machines for testing.
 														echo '***************************************** COPYING BUILD TO THE DEPLOYED VM(s) FOR TESTING  *****************************************'
 														echo "HCMX: Copying build to the virtual machine with IP address: $ipAddress"
-														final String scpCMDOutput = sh(script: "scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -rp ./build root@$ipAddress:/tmp/", returnStdout: true).trim()
-													
+														//final String scpCMDOutput = sh(script: "scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -rp ./build root@$ipAddress:/tmp/", returnStdout: true).trim()
+													        // /var/lib/jenkins/workspace/Advantage Online Shopping/root/target/wars.zip
+														final String scpCMDOutput = sh(script: "scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -rp /var/lib/jenkins/workspace/Advantage Online Shopping/root/target/wars.zip root@$ipAddress:/tmp/", returnStdout: true).trim()
 													}
 													else
 													{
