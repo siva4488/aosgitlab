@@ -645,7 +645,7 @@ pipeline
 														echo "HCMX: Copying build to the virtual machine with IP address: $ipAddress"
 														//final String scpCMDOutput = sh(script: "scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -rp ./build root@$ipAddress:/tmp/", returnStdout: true).trim()
 													        // /var/lib/jenkins/workspace/Advantage Online Shopping/root/target/wars.zip
-														final String scpCMDOutput = sh(script: "scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -rp /var/lib/jenkins/workspace/Advantage Online Shopping/root/target/wars.zip root@$ipAddress:/tmp/", returnStdout: true).trim()
+														//final String scpCMDOutput = sh(script: "scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -rp '/var/lib/jenkins/workspace/Advantage Online Shopping/root/target/wars.zip' root@$ipAddress:/tmp/", returnStdout: true).trim()
 													}
 													else
 													{
@@ -662,7 +662,11 @@ pipeline
 													// Test build on the deployed virtual machine.
 													echo '***************************************** TESTING BUILD ON THE DEPLOYED/TEST VM(s) *****************************************'
 													echo "HCMX: Testing build on the virtual machine with IP address: $ipAddress"
-													final String remoteCMDOutput = sh(script: "ssh -o StrictHostKeyChecking=no root@$ipAddress /tmp/build/HelloWorld.sh", returnStdout: true).trim()
+													//final String remoteCMDOutput = sh(script: "ssh -o StrictHostKeyChecking=no root@$ipAddress /tmp/build/HelloWorld.sh", returnStdout: true).trim()
+													final String remoteCMDOutput = sh(script: "ssh -o StrictHostKeyChecking=no root@$ipAddress wget --directory-prefix=/tmp http://hcmxjenkins.swinfra.net:18080/job/AOS-repo/ws/deploy_war.sh", returnStdout: true).trim()
+													final String remoteCMDOutput = sh(script: "ssh -o StrictHostKeyChecking=no root@$ipAddress wget --directory-prefix=/tmp 'http://hcmxjenkins.swinfra.net:8080/job/Advantage%20Online%20Shopping/lastSuccessfulBuild/artifact/accountservice/target/accountservice.war'", returnStdout: true).trim()
+													final String remoteCMDOutput = sh(script: "ssh -o StrictHostKeyChecking=no root@$ipAddress sh deploy_war.sh /tmp/accountservice.war $ipAddress postgres admin $ipAddress $ipAddress", returnStdout: true).trim()
+													//final String remoteCMDOutput = sh(script: "ssh -o StrictHostKeyChecking=no root@$ipAddress /tmp/build/HelloWorld.sh", returnStdout: true).trim()
 													
 													// Validate test results from build execution results on remotely deployed virtual machine
 													if(remoteCMDOutput && remoteCMDOutput.equals("Hello World"))
