@@ -1,6 +1,6 @@
 {
-  "proxy" : "http://proxy.eswdc.net:8088",
-  "https-proxy" : "http://proxy.eswdc.net:8088",
+  "proxy" : "http://web-proxy.in.softwaregrp.net:8080",
+  "https-proxy" : "http://web-proxy.in.softwaregrp.net:8080",
   "directory": "vendor",
   "registry": "https://registry.bower.io"
 }
